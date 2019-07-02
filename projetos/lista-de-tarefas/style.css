@@ -1,0 +1,25 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	min-width: 50vw;
+	justify-content: center;
+	align-items: center;
+}
+form{
+	min-height: 40vh;
+
+}
+form,label{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+
+}
+
+
