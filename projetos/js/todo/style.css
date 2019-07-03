@@ -10,11 +10,11 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-form{
+.form{
 	min-height: 40vh;
 
 }
-form,label{
+.form,label{
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;

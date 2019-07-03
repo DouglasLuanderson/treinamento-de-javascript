@@ -1,10 +1,16 @@
-let form = document.querySelector("form");
-let cards = document.createElement("ul");
+let form = document.querySelector(".form");
+let postit = document.createElement("ul");
 let list = []
+let alert = "Cuidado na hora de preencher os dados do postit"
 
-form.elements.color.value = '#67ace2'
+form.elements.color.value = "#67ace2"
 
-// 
+document.getElementById("start").addEventListener("click", function(){
+  document.getElementById("demo").innerHTML = alert;
+
+  console.log("alert")
+});
+
 form.addEventListener("submit", event => {	
 	event.preventDefault();
 
@@ -30,8 +36,8 @@ form.addEventListener("submit", event => {
 
 function render() {
 	// essa parte do while funciona para quando adicionar o item, ele limpa os filhos anterios para não se repitir
-	while (cards.firstChild) {
-		cards.removeChild(cards.firstChild);
+	while (postit.firstChild) {
+		postit.removeChild(postit.firstChild);
 	}
 	
 
@@ -58,7 +64,7 @@ function render() {
 		//  o card.style.backgroundColor foi criado para inserir um background apenas no input de cor
 		card.style.backgroundColor = item.color;
 
-		cards.appendChild(card);
+		postit.appendChild(card);
 	
 	});
 };
@@ -75,7 +81,7 @@ function renderItem (element, text) {
 
 }
 
-document.body.appendChild(cards);
+document.body.appendChild(postit);
 // Se o js não pegar a body e informar que deve mostrar o filho do meu card(ul), quando eu enviar meu form o post it não vai aparecer na tela
 
 	
