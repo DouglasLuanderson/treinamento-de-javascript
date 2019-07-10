@@ -1,0 +1,25 @@
+*{
+	box-sizing: border-box;
+}
+.boxTitle{
+	height: 15vh;
+	display: flex;
+	justify-content: center;
+	align-items:  center;
+	flex-direction: column;
+	margin-bottom: 3vh;
+}	
+	
+.boxQuestion{
+	width: 450px;
+	min-height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: solid 4px rgba(0,0,0,0.4);
+	border-radius: 5%;
+	margin: auto;
+	padding: 5%;
+	background: none;
+}
