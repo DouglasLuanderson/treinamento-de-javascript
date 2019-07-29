@@ -3,31 +3,37 @@ let isEditing = undefined;
 let form = document.createElement("form");
 let ul = document.createElement("ul");
 let sectionCard = document.createElement("section");
-let inputSerie = document.createElement("input");  
+let inputSerie = document.createElement("input"); 
 let inputDescription = document.createElement("input"); 
+let buttonEpisode = document.createElement("button"); 
+let buttonSubmit = document.createElement("button");
 
 
+ 
 function renderItem (){
  
   let label = document.createElement("label");  
-  let button = document.createElement("button");
   let title = document.createElement("h1");
 
-  inputSerie.setAttribute("placeholder", "title")
-  inputDescription.setAttribute("placeholder", "descrition")
+  inputSerie.setAttribute("placeholder", "Nome da Série");
+  inputSerie.setAttribute("required", "true");
+  inputDescription.setAttribute("placeholder", "Sinopse da Série");
+  inputDescription.setAttribute("required", "true");
 
-  button.innerHTML = "Enviar";
+  buttonEpisode.innerHTML = "Novo Episódio";
+  buttonSubmit.innerHTML = "Adicionar Série";  
   title.innerHTML = "Bliblioteca de Séries";
-
 
   form.appendChild(label);
   form.appendChild(title);
+
   form.appendChild(inputSerie);
   form.appendChild(inputDescription);
-  form.appendChild(button);
+  form.appendChild(buttonEpisode);
+  form.appendChild(buttonSubmit); 
   document.body.appendChild(form);
 
-  button.addEventListener("click", function(){	
+  buttonSubmit.addEventListener("click", function(){	
     event.preventDefault();
 
     if (typeof(isEditing) == 'number'){
@@ -38,7 +44,7 @@ function renderItem (){
         description: inputDescription.value,
         title: inputSerie.value,
       })
-    }     
+    }    
 
     inputSerie.value = "";
     inputDescription.value = "";
@@ -114,42 +120,3 @@ window.onload = renderItem()
  
 
 
-// form.addEventListener("submit", event => {	
-// 	event.preventDefault();
-
-// 	list.push({
-// 		title: form.elements.title.value,
-// 		description: form.elements.description.value,
-// 		episode: form.elements.category.value,
-
-// 	})
-
-// 		form.elements.title.value = ''
-// 		form.elements.description.value = ''
-// 		form.elements.episode.value = ''	
-
-
-// 	render()
-// });
-
-// function render() { 
-
-//   list.map((item) => {
-//     let card = document.createElement("li");
-
-//     let title = renderItem("h2", item.title);
-//     let description = renderItem("p", item.description);
-//     let episode = renderItem("p", item.episode);
-    
-//     card.appendChild(title);    
-//     card.appendChild(description);
-//     card.appendChild(episode);
-
-//     card.style.backgroundColor = item.color;
-
-//     film.appendChild(card);
-  
-//   });
-
-
-// };
