@@ -1,15 +1,16 @@
+let Sum = []
 let position = 0, test, status, choice, correct = 0;
 let questions = [
-    ["Qual a Capital do Rio de Janeiro?", "Manaus", "Porto de galinhas", "Rio de Jaeiro", "C"],
-    ["Qual a capital do Paraná?", "Rio Branco", "Paraná", "Coritiba", "C"],
-    ["Qual a capital do Acre?", "Boa Vista", "Rio Branco", "Palmas", "B"],
-    ["Qual a capital do Maranhão", "Ilhaus", "Teresina", "São Luís", "C"]
+    ["Qual a Capital do Rio de Janeiro?", "Manaus", "Porto de galinhas", "Rio de Jaeiro", "C", "25"],
+    ["Qual a capital do Paraná?", "Rio Branco", "Paraná", "Curitiba", "C", "25"],
+    ["Qual a capital do Acre?", "Boa Vista", "Rio Branco", "Palmas", "B", "25"],
+    ["Qual a capital do Maranhão", "Ilhaus", "Teresina", "São Luís", "C", "25"]
 ];
 
-document.getElementById("start").addEventListener("click", function(){
-iniciar('start').css('display','none');
-console.log("hello")
-})
+// document.getElementById("start").addEventListener("click", function(){
+// iniciar('start').css('display','none');
+// console.log("hello")
+// })
 
 function search(search){
   return document.getElementById(search);
@@ -18,12 +19,11 @@ function search(search){
 function renderQuestion(){
   test = search("test");
   if(position >= questions.length){
-    test.innerHTML = "<h2>Você acertou "+correct+" de "+questions.length+" questões</h2>";
-    search("status").innerHTML = "Teste completo";
-    position = 0;
+    test.innerHTML = "<h2>Você acertou "+correct+" de "+questions.length+" questões</h2>"; search("status").innerHTML = "Teste completo"; position = 0;
     correct = 0;
     return false;
   }
+
   search("status").innerHTML = "Question "+(position+1)+" of "+questions.length;
   question = questions[position][0];
   option1 = questions[position][1];
