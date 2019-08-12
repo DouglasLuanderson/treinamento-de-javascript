@@ -5,21 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="style.css">
-	<title>Desafio Tramps</title>
+	<title>Desafio widget da Tramps</title>
 
 </head>
-<body>
-	<section>
-		<div id="trampos-job-box" data-theme="Default Light" data-location="SP" data-category="programacao" width="300" height="260" data-title="Vagas de Empego" data-show-new-opportunity-link="1"></div>
-	</section>
+<body>	
+	<p>Vagas Tramps.co</p>		
+	<div id="listVagas"></div>	
 </body>
 
-<script type="text/javascript">
-  (function() {
-    var tr = document.createElement('script'); tr.type = 'text/javascript';
-		if('https:' == document.location.protocol) return;
-    tr.src = 'http://trampos.co/plugins/tr.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tr, s);
-  })();
-</script>
+<script src="main.js"></script>
+<script src="main.js" src="tramp.json"></script>
 </html>
