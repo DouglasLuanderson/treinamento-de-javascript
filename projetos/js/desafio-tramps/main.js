@@ -66,7 +66,7 @@ function renderMain(){
 	let object = widget.length;
 	let idsVaga = [];
 	
-	for (let i = 0; i <= object; i++) {
+	for (let i = 0 ; i <= object; i++) {
 		let listVagas = document.getElementById('listVagas')
 		let ulLista = document.createElement('ul')
 		listVagas.appendChild(ulLista)
@@ -74,11 +74,15 @@ function renderMain(){
 		let textNomes = document.createElement('p')
 		namesVaga = widget[cont].opportunity.name
 		textNomes = document.createTextNode(namesVaga)
+				
 
 		let textVagaNomes = document.createElement('p')
 		namesCompany = widget[cont].opportunity.company_name
 		textVagaNomes = document.createTextNode(namesCompany)
 		
+		let linkVaga = document.createElement('a')
+		linkVagaUrl= widget[cont].opportunity.permalink
+		linkVaga = document.createTextNode(linkVagaUrl)
 
 		let liLista = document.createElement('li')
 
@@ -90,28 +94,30 @@ function renderMain(){
 		ulLista.style.padding = "0px 0px 0px 0px"
 		ulLista.style.alignItems = "flex-end"
     	ulLista.style.fontSize = "1.5em"
-		
+    	ulLista.style.cursor = "pointer"
 
 		liLista.style.display = "flex"
 		liLista.style.justifyContent = "center"
 		liLista.style.alignItems = "center"
 		liLista.style.padding = "5px 0px 0px 0px"
-		liLista.style.height = "8.5vh"
+		liLista.style.height = "10vh"
 		liLista.style.color = "white"
-		liLista.style.width = "98.5%"
+		liLista.style.width = "98%"
 		liLista.style.backgroundColor = "#38332f"
-
 		
 		liLista.appendChild(textNomes)
-	
-		console.log(liLista)
 		ulLista.appendChild(liLista)
 
 
-		liLista.addEventListener("mouseover", function( event ) {   
-			ulLista.style.color = "white"
+		liLista.addEventListener("mouseover", function( event ) { 
+		ulLista.style.display = "flex" 
+
+		ulLista.style.alignItems = "center" 
+		
+		ulLista.style.color = "white"
 	    ulLista.style.height = "20vh";
 	    ulLista.appendChild(textVagaNomes)
+	    liLista.appendChild(linkVaga)
 	    setTimeout(function() {
 	      
 	    }, 500);
@@ -119,8 +125,10 @@ function renderMain(){
 	  
 	  
 	  ulLista.addEventListener("mouseout", function( event ) {   
-	    ulLista.style.height = "8.5vh";
+	    ulLista.style.height = "7vh";
+	    liLista.style.flexDirection = "column"
 	    textVagaNomes.remove()
+	    linkVaga.remove()
 	    setTimeout(function() {
 	      
 	    }, 500);
